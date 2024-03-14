@@ -1,21 +1,21 @@
-import React from "react";
 
 const NextArrow = ({
   setFirstNextClick,
   setDefaultQuestion,
   setVal,
-  setNextCLick,
+  setNextClick,
+  children
 }) => {
   function handleClick() {
     setFirstNextClick(true);
     setDefaultQuestion(false);
     setVal((currentVal) => (currentVal + 1) % 10);
-    setNextCLick((curr) => !curr);
+    setNextClick((curr) => !curr);
   }
   return (
     <div style={{ backgroundColor: "transparent", padding: ".5rem" }}>
-      <button onClick={handleClick} style={{ backgroundColor: "white" }}>
-        ⭢
+      <button className="nxt-btn" onClick={handleClick} style={{ backgroundColor: "white" }}>
+        {children}
       </button>
     </div>
   );

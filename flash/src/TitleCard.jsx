@@ -1,9 +1,9 @@
-import React from "react";
+
 
 const TitleCard = () => {
   return (
     <div className="title">
-      <h2>The final NBA Test</h2>
+      <h2>The Final NBA Test</h2>
       <h3>
         How true of an NBA fan are you? Your knowledge will be tested here
       </h3>

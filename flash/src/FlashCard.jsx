@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const FlashCard = ({ question, answer }) => {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -16,14 +16,17 @@ const FlashCard = ({ question, answer }) => {
     // <div className="flashy" onClick={toggleShowAnswer}>
     //   {showAnswer ? answer : question}
     // </div>
-    <div className={`flashy ${showAnswer ? 'show-answer' : ''}`} onClick={toggleShowAnswer}>
-    <div className="card-face card-front">
-      {question}
+    <div
+      className={`flashy ${showAnswer ? "show-answer" : ""}`}
+      onClick={toggleShowAnswer}
+    >
+      <div className="card-face card-front">
+        <h3>{question}</h3>
+      </div>
+      <div className="card-face card-back">
+        <h3>{answer}</h3>
+      </div>
     </div>
-    <div className="card-face card-back">
-      {answer}
-    </div>
-  </div>
   );
 };
 

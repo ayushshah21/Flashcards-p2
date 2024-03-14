@@ -18,7 +18,7 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: 2rem;
   min-width: 320px;
   min-height: 100vh;
 
@@ -29,7 +29,7 @@ h1 {
   line-height: 1.1;
 }
 
-button {
+.nxt-btn {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -40,11 +40,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
+.nxt-btn:hover {
   border-color: #646cff;
 }
-button:focus,
-button:focus-visible {
+.nxt-btn:focus,
+.nxt-btn:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
@@ -56,7 +56,7 @@ button:focus-visible {
   a:hover {
     color: #747bff;
   }
-  button {
+  .nxt-btn {
     background-color: #f9f9f9;
   }
 }
@@ -104,6 +104,7 @@ button:focus-visible {
   background-color: white; /* Adjust or add more styles as needed */
   border-radius: 10px; /* Optional: Rounds the corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow for better depth effect */
+  padding: 1rem;
 }
 
 .card-front {
@@ -121,4 +122,68 @@ button:focus-visible {
 
 .card-back {
   transform: rotateX(180deg); /* Counter-rotate the back content to keep text upright */
+}
+
+.answer-form {
+  margin-top: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Space between elements */
+  padding: 20px;
+}
+
+.guess-input {
+  padding: 15px 20px;
+  font-size: 18px;
+  border: 2px solid gray; /* Blue border for a pop of color */
+  border-radius: 25px; /* Rounded edges for a modern look */
+  width: 100%; /* Make input flexible in width */
+  max-width: 400px; /* Maximum width */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: all 0.3s ease; /* Smooth transition for interactions */
+  outline: none; /* Removes the default outline */
+}
+
+.guess-input:focus {
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Glowing effect on focus */
+  border-color: #0056b3; /* Darker blue border on focus */
+}
+
+.check-button {
+  padding: 10px 25px;
+  font-size: 18px;
+  font-weight: bold; /* Make the text bolder */
+  color: #fff; /* White text */
+  background-color: #007bff; /* Blue background */
+  border: none;
+  border-radius: 25px; /* Rounded edges for consistency with the input */
+  cursor: pointer; /* Indicates it's clickable */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Consistent shadow with the input */
+  transition: all 0.3s ease; /* Smooth transition for hover and focus */
+  outline: none; /* Removes the default outline */
+}
+
+.check-button:hover, .check-button:focus {
+  cursor: pointer;
+  background-color: #0056b3; /* Darker blue for interaction */
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow on hover/focus */
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .answer-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .guess-input, .check-button {
+    width: calc(100% - 40px); /* Full width with some padding */
+    max-width: none; /* Overrides the max-width set earlier */
+  }
+}
+.arrows{
+  display: flex;
+  flex-direction: row;
+  margin-top: -1rem;
 }

@@ -3,6 +3,7 @@ import "./index.css";
 import TitleCard from "./TitleCard";
 import NextArrow from "./NextArrow";
 import FlashCard from "./FlashCard";
+import Form from "./Form";
 
 const questions = [
   {
@@ -56,6 +57,7 @@ function App() {
   const [firstNextClick, setFirstNextClick] = useState(false);
   const [nextClick, setNextClick] = useState(false);
   const [val, setVal] = useState(5);
+  const [guess, setGuess] = useState("");
   const defQuestion = {
     question: "Start!",
     answer: "Press the next arrow to start the flashcards!",
@@ -63,6 +65,18 @@ function App() {
   useEffect(() => {
     setVal(Math.floor(Math.random() * questions.length));
   }, [nextClick]);
+
+  function handleSubmitGuess(e) {
+    e.preventDefault();
+    setGuess("");
+    if (guess === questions[val].answer) {
+      console.log("Hello");
+      alert("CORRECT");
+    } else {
+      console.log("HI");
+      alert("Wrong! Try Again");
+    }
+  }
   return (
     <div className="main-cont">
       <TitleCard />
@@ -78,12 +92,29 @@ function App() {
           answer={questions[val].answer}
         />
       )}
-      <NextArrow
-        setVal={setVal}
-        setDefaultQuestion={setDefaultQuestion}
-        setFirstNextClick={setFirstNextClick}
-        setNextClick = {setNextClick}
+      <Form
+        guess={guess}
+        setGuess={setGuess}
+        onSubmitGuess={handleSubmitGuess}
       />
+      <div className="arrows">
+        <NextArrow
+          setVal={setVal}
+          setDefaultQuestion={setDefaultQuestion}
+          setFirstNextClick={setFirstNextClick}
+          setNextClick={setNextClick}
+        >
+          ⭠
+        </NextArrow>
+        <NextArrow
+          setVal={setVal}
+          setDefaultQuestion={setDefaultQuestion}
+          setFirstNextClick={setFirstNextClick}
+          setNextClick={setNextClick}
+        >
+          ⭢
+        </NextArrow>
+      </div>
     </div>
   );
 }
