@@ -2,7 +2,7 @@
 
 By: **Ayush Shah**
 
-This web app: **extends the original flashcards app by adding user input checking and back button functionality **
+This web app: **allows users to work with flashcards to study, learn something new, or play a guessing game and test their knowledge of any particular topic **
 
 
 ## Features
